@@ -3,13 +3,28 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 
-describe('backend-express-template routes', () => {
+const { cities } = require('../data/cities');
+
+describe('city routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it('example test - delete me!', () => {
-    expect(1).toEqual(1);
+
+  it('cities should return a list of cities', async () => {
+    const res = await request(app).get('/cities');
+    expect(res.body).toEqual(cities);
   });
+
+  it('/cities/:id should return city detail', async () => {
+    const res = await request(app).get('/cities/1');
+    expect(res.body).toEqual({
+      id: '1',
+      city_name: 'Atlanta',
+      country: 'USA',
+      expensive: true,
+    });
+  });
+
   afterAll(() => {
     pool.end();
   });
