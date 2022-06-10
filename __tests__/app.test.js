@@ -15,11 +15,11 @@ describe('city routes', () => {
     expect(res.body).toEqual(cities);
   });
 
-  xit('/cities/:id should return city detail', async () => {
+  it('/cities/:id should return city detail', async () => {
     const res = await request(app).get('/cities/1');
     expect(res.body).toEqual({
       id: '1',
-      city_name: 'Portland',
+      city_name: 'Atlanta',
       country: 'USA',
       expensive: true,
     });
