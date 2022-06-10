@@ -14,4 +14,5 @@ CREATE table cities (
 
 INSERT INTO cities (city_name, country, expensive) VALUES
 ('Atlanta', 'USA', true),
-('New Mexico', 'USA', false);
+('New Mexico', 'USA', false),
+('Los Angeles', 'USA', true);

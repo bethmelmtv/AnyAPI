@@ -1,15 +1,15 @@
 const cities = [
   {
     id: '1',
-    city_name: 'Portland',
+    city_name: 'Atlanta',
     country: 'USA',
-    expensive: false,
+    expensive: true,
   },
   {
     id: '2',
-    city_name: 'New York',
+    city_name: 'New Mexico',
     country: 'USA',
-    expensive: true,
+    expensive: false,
   },
   {
     id: '3',
